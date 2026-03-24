@@ -1,6 +1,7 @@
 string getBpShareItemLevelSellersText()
 {
-    var bpShareSellers = GetVariableValue("BPShareItemLevel_Sellers");
+    const string BP_SHARE_ITEM_LEVEL_SELLERS = "BPShareItemLevel_Sellers";
+    var bpShareSellers = GetVariableValue(BP_SHARE_ITEM_LEVEL_SELLERS);
 
     if (string.IsNullOrWhiteSpace(bpShareSellers))
     {

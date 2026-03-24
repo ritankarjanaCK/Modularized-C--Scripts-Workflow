@@ -15,14 +15,16 @@
  **/
 string getLocationName()
 {
-    var isNYWine = GetVariableValue("SothebysWineNewYork");
+    const string LOCATION = "Location";
+    const string SOTHEBYS_WINE_NEW_YORK = "SothebysWineNewYork";
+    var isNYWine = GetVariableValue(SOTHEBYS_WINE_NEW_YORK);
 
     if (isNYWine == "Yes")
     {
         return "Sothebys Wine New York";
     }
 
-    return GetVariableValue("Location");
+    return GetVariableValue(LOCATION);
 }
 
 return getLocationName();

@@ -8,7 +8,8 @@
 
 string getTrimmedAccountId()
 {
-    var accountId = GetVariableValue("accountId");
+    const string ACCOUNT_ID = "accountId";
+    var accountId = GetVariableValue(ACCOUNT_ID);
     return accountId?.Trim() ?? string.Empty;
 }
 

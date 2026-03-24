@@ -72,7 +72,8 @@ string sanitizeFileName(string input)
 
 string getSanitizedConsignorName()
 {
-    var consignorName = GetVariableValue("ConsignorName");
+    const string CONSIGNOR_NAME = "ConsignorName";
+    var consignorName = GetVariableValue(CONSIGNOR_NAME);
     return sanitizeFileName(consignorName);
 }
 

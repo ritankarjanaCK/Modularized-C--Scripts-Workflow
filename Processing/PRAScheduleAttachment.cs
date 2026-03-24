@@ -9,12 +9,12 @@
 
 string getPRAScheduleAttachments(int maxCount)
 {
-    const string basePath = "Params.Params.TemplateFieldData.Guarantee_Form.Multi_Lot_Guarantee.Please_attach_the_PRA_schedule_Attachments.Please_attach_the_PRA_schedule_SingleValue";
+    const string BASEPATH = "Params.Params.TemplateFieldData.Guarantee_Form.Multi_Lot_Guarantee.Please_attach_the_PRA_schedule_Attachments.Please_attach_the_PRA_schedule_SingleValue";
     var attachmentsList = new System.Collections.Generic.List<string>();
 
     for (int index = 1; index <= maxCount; index++)
     {
-        var path = $"{basePath}[{index}].Document.Uid";
+        var path = $"{BASEPATH}[{index}].Document.Uid";
         var attachmentId = GetVariableValue(path);
 
         if (!string.IsNullOrWhiteSpace(attachmentId))

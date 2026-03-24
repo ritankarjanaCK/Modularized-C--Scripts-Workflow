@@ -5,16 +5,16 @@ string getTemplateFieldValue(string relativePath)
         throw new ArgumentException("Field path cannot be null or empty.", nameof(relativePath));
     }
 
-    const string basePath = "Params.Params.TemplateFieldData.";
+    const string BASEPATH = "Params.Params.TemplateFieldData.";
 
     try
     {
-        return GetVariableValue(basePath + relativePath);
+        return GetVariableValue(BASEPATH + relativePath);
     }
     catch (Exception ex)
     {
         throw new ApplicationException(
-            $"Error retrieving value for path: {basePath + relativePath}", ex
+            $"Error retrieving value for path: {BASEPATH + relativePath}", ex
         );
     }
 }
@@ -35,13 +35,13 @@ string getReconsignmentLocations()
         { "Zurich", "Zurich" }
     };
 
-    const string basePath = "THE_PROPERTY.To_which_locations_will_the_property_be_reconsigned";
+    const string RECONSIGNMENT_LOCATIONS_PATH = "THE_PROPERTY.To_which_locations_will_the_property_be_reconsigned";
 
     var selectedLocationList = new System.Collections.Generic.List<string>();
 
     foreach (var entry in locationsMap)
     {
-        var value = getTemplateFieldValue($"{basePath}.{entry.Key}");
+        var value = getTemplateFieldValue($"{RECONSIGNMENT_LOCATIONS_PATH}.{entry.Key}");
 
         if (string.Equals(value, "True", System.StringComparison.OrdinalIgnoreCase))
         {

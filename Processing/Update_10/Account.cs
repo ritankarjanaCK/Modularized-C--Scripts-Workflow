@@ -20,16 +20,16 @@ string getTemplateFieldValue(string relativePath)
         throw new ArgumentException("Field path cannot be null or empty.", nameof(relativePath));
     }
 
-    const string basePath = "Params.Params.TemplateFieldData.";
+    const string BASEPATH = "Params.Params.TemplateFieldData.";
 
     try
     {
-        return GetVariableValue(basePath + relativePath);
+        return GetVariableValue(BASEPATH + relativePath);
     }
     catch (Exception ex)
     {
         throw new ApplicationException(
-            $"Error retrieving value for path: {basePath + relativePath}", ex
+            $"Error retrieving value for path: {BASEPATH + relativePath}", ex
         );
     }
 }
@@ -43,11 +43,14 @@ string getTemplateFieldValue(string relativePath)
 
 string getAccountNameForFile()
 {
-    var accountName = getTemplateFieldValue("Account_Name_For_File");
+    const string ACCOUNT_NAME_FOR_FILE = "Account_Name_For_File";
+    const string MANUALLY_ENTERED_NAME_AND_ACCOUNT = "ManuallyEnteredNameAndAccount";
+
+    var accountName = getTemplateFieldValue(ACCOUNT_NAME_FOR_FILE);
 
     if (string.IsNullOrWhiteSpace(accountName) || accountName == "-")
     {
-        return GetVariableValue("ManuallyEnteredNameAndAccount");
+        return GetVariableValue(MANUALLY_ENTERED_NAME_AND_ACCOUNT);
     }
 
     return accountName;
@@ -68,11 +71,14 @@ return getAccountNameForFile();
 
 string getAccountOrConsignorName()
 {
-    var account = GetVariableValue("Account");
+    const string ACCOUNT = "Account";
+    const string CONSIGNOR_NAME = "ConsignorName";
+
+    var account = GetVariableValue(ACCOUNT);
 
     if (string.IsNullOrWhiteSpace(account))
     {
-        return GetVariableValue("ConsignorName");
+        return GetVariableValue(CONSIGNOR_NAME);
     }
 
     return account;

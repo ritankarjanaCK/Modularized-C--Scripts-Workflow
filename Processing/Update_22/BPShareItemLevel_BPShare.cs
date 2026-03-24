@@ -1,5 +1,6 @@
 string getBpShareItemLevelBpText()
 {
+    const string BP_SHARE_ITEM_LEVEL_BP_SHARE = "BPShareItemLevel_BPShare";
     var bpShareItemLevel = GetVariableValue("BPShareItemLevel_BPShare");
 
     if (string.IsNullOrWhiteSpace(bpShareItemLevel))

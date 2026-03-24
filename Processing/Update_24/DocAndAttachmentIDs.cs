@@ -1,5 +1,8 @@
 string getCombinedDocIds()
 {
+    const string DOC_AND_ATTACHMENT_IDS = "DocAndAttachmentIDs";
+    const string GUARANTEE_FORM_ID = "GuaranteeFormID";
+    
     var values = new[]
     {
         GetVariableValue("DocAndAttachmentIDs"),

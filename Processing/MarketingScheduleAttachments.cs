@@ -8,12 +8,12 @@
 
 string getMarketingScheduledAttachments(int maxCount)
 {
-    const string basePath = "Params.Params.TemplateFieldData.Schedule_III_Marketing_Schedule.Marketing_Schedule.Please_attach_marketing_promises_Attachments.Please_attach_marketing_promises_SingleValue";
+    const string BASEPATH = "Params.Params.TemplateFieldData.Schedule_III_Marketing_Schedule.Marketing_Schedule.Please_attach_marketing_promises_Attachments.Please_attach_marketing_promises_SingleValue";
     var attachmentsList = new System.Collections.Generic.List<string>();
     
     for (int iterator = 1; iterator <= maxCount; iterator++)
     {
-        var path = $"{basePath}[{iterator}].Document.Uid";
+        var path = $"{BASEPATH}[{iterator}].Document.Uid";
         var attachmentId = GetVariableValue(path);
 
         if (!string.IsNullOrWhiteSpace(attachmentId))

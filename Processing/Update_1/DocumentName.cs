@@ -17,9 +17,13 @@
    **/
 string getDocumentName()
 {
-    var part1 = GetVariableValue("DocumentNameVariable1")?.Trim();
-    var part2 = GetVariableValue("DocumentNameVariable2")?.Trim();
-    var part3 = GetVariableValue("DocumentNameVariable3")?.Trim();
+    const string DOCUMENT_NAME_VARIABLE_1 = "DocumentNameVariable1";
+    const string DOCUMENT_NAME_VARIABLE_2 = "DocumentNameVariable2";
+    const string DOCUMENT_NAME_VARIABLE_3 = "DocumentNameVariable3";
+
+    var part1 = GetVariableValue(DOCUMENT_NAME_VARIABLE_1)?.Trim();
+    var part2 = GetVariableValue(DOCUMENT_NAME_VARIABLE_2)?.Trim();
+    var part3 = GetVariableValue(DOCUMENT_NAME_VARIABLE_3)?.Trim();
 
     var parts = new[] { part1, part2, part3 };
 

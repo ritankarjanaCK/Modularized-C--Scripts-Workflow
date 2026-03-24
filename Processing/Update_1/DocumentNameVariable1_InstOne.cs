@@ -15,7 +15,8 @@
 
 string getTrimmedAccount()
 {
-    return GetVariableValue("Account")?.Trim() ?? string.Empty;
+    const string ACCOUNT = "Account";
+    return GetVariableValue(ACCOUNT)?.Trim() ?? string.Empty;
 }
 
 

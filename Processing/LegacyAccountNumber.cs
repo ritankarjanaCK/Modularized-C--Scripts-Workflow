@@ -38,7 +38,8 @@ string sanitizeFileName(string input)
 
 string getSanitizedLegacyAccountNumber()
 {
-    var accountNumber = GetVariableValue("LegacyAccountNumber");
+    const string LEGACY_ACCOUNT_NUMBER = "LegacyAccountNumber";
+    var accountNumber = GetVariableValue(LEGACY_ACCOUNT_NUMBER);
     return sanitizeFileName(accountNumber);
 }
 

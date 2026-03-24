@@ -6,16 +6,16 @@ string getTemplateFieldValue(string relativePath)
         throw new ArgumentException("Field path cannot be null or empty.", nameof(relativePath));
     }
 
-    const string basePath = "Params.Params.TemplateFieldData.";
+    const string BASEPATH = "Params.Params.TemplateFieldData.";
 
     try
     {
-        return GetVariableValue(basePath + relativePath);
+        return GetVariableValue(BASEPATH + relativePath);
     }
     catch (Exception ex)
     {
         throw new ApplicationException(
-            $"Error retrieving value for path: {basePath + relativePath}", ex
+            $"Error retrieving value for path: {BASEPATH + relativePath}", ex
         );
     }
 }
@@ -23,7 +23,8 @@ string getTemplateFieldValue(string relativePath)
 
 string getSellersCommissionText()
 {
-    var value = getTemplateFieldValue("SELLERS_COMMISSION.Please_enter_any_special_terms_sellers");
+    const string SELLERS_COMMISSION_PATH = "SELLERS_COMMISSION.Please_enter_any_special_terms_sellers";
+    var value = getTemplateFieldValue(SELLERS_COMMISSION_PATH);
 
     if (string.IsNullOrWhiteSpace(value))
     {

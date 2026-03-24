@@ -8,7 +8,8 @@
 
 string getTrimmedConsignmentId()
 {
-    var consignmentId = GetVariableValue("consignmentId");
+    const string CONSIGNMENT_ID = "consignmentId";
+    var consignmentId = GetVariableValue(CONSIGNMENT_ID);
     return consignmentId?.Trim() ?? string.Empty;
 }
 

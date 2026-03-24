@@ -8,12 +8,12 @@
 
 string getFinalWordGuarantee(int maxCount)
 {
-    const string basePath = "Params.Params.TemplateFieldData.Guarantee_Form.Please_attach_a_Word_version_of_the_final_CA_Attachments.Please_attach_a_Word_version_of_the_final_CA_SingleValue";
+    const string BASEPATH = "Params.Params.TemplateFieldData.Guarantee_Form.Please_attach_a_Word_version_of_the_final_CA_Attachments.Please_attach_a_Word_version_of_the_final_CA_SingleValue";
     var attachmentsList = new System.Collections.Generic.List<string>();
 
     for (int index = 1; index <= maxCount; index++)
     {
-        var path = $"{basePath}[{index}].Document.Uid";
+        var path = $"{BASEPATH}[{index}].Document.Uid";
         var attachmentId = GetVariableValue(path);
 
         if (!string.IsNullOrWhiteSpace(attachmentId))

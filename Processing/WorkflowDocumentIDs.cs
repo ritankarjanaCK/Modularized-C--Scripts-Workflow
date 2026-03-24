@@ -9,12 +9,16 @@
 
 string getStoredIds()
 {
+    const string MAIN_DOC_ID = "MainDocID";
+    const string ITEM_SCHEDULE_ATTACHMENTS = "ItemScheduleAttachments";
+    const string MARKETING_SCHEDULE_ATTACHMENT = "MarketingScheduleAttachment";
+    const string ITEM_SCHEDULE_ATTACHMENT_ID = "ItemScheduleAttachmentID";
     var attachmentLists = new[]
     {
-        GetVariableValue("MainDocID"),
-        GetVariableValue("ItemScheduleAttachments"),
-        GetVariableValue("MarketingScheduleAttachment"),
-        GetVariableValue("ItemScheduleAttachmentID")
+        GetVariableValue(MAIN_DOC_ID),
+        GetVariableValue(ITEM_SCHEDULE_ATTACHMENTS),
+        GetVariableValue(MARKETING_SCHEDULE_ATTACHMENT),
+        GetVariableValue(ITEM_SCHEDULE_ATTACHMENT_ID)
     };
 
     return string.Join("|",

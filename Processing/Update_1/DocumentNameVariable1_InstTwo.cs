@@ -44,7 +44,8 @@ string sanitizeFileName(string input)
 **/
 string getSanitizedDocumentNameVariable1()
 {
-    var documentName = GetVariableValue("DocumentNameVariable1");
+    const string DOCUMENT_NAME_VARIABLE_1 = "DocumentNameVariable1";
+    var documentName = GetVariableValue(DOCUMENT_NAME_VARIABLE_1);
     return sanitizeFileName(documentName);
 }
 

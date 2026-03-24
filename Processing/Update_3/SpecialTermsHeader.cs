@@ -1,6 +1,8 @@
 string getSpecialTermsLabel()
 {
-    var specialTermsApply = GetVariableValue("SpecialTermsApply");
+    const string SPECIAL_TERMS_APPLY_PATH = "SpecialTermsApply";
+
+    var specialTermsApply = GetVariableValue(SPECIAL_TERMS_APPLY_PATH);
 
     if (string.Equals(specialTermsApply, "True", System.StringComparison.OrdinalIgnoreCase))
     {

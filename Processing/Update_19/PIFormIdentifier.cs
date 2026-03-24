@@ -1,13 +1,15 @@
 string getLanguageDisplay()
 {
-    var language = GetVariableValue("Language");
+    const string LANGUAGE = "Language";
+    const string LOCATION = "Location";
+    var language = GetVariableValue(LANGUAGE);
 
     if (string.Equals(language, "English", System.StringComparison.OrdinalIgnoreCase))
     {
         return "English";
     }
 
-    var location = GetVariableValue("Location");
+    var location = GetVariableValue(LOCATION);
 
     return $"{location} {language}".Trim();
 }

@@ -8,8 +8,11 @@
 
 string getConsignorAndAccount()
 {
-    var consignorName = GetVariableValue("ConsignorName");
-    var accountNumber = GetVariableValue("LegacyAccountNumber");
+    const string CONSIGNOR_NAME = "ConsignorName";
+    const string ACCOUNT_NUMBER = "LegacyAccountNumber";
+    
+    var consignorName = GetVariableValue(CONSIGNOR_NAME);
+    var accountNumber = GetVariableValue(ACCOUNT_NUMBER);
 
     return $"{consignorName}_{accountNumber}";
 }

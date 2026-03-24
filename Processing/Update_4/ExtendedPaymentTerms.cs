@@ -6,16 +6,16 @@ string getTemplateFieldValue(string relativePath)
         throw new ArgumentException("Field path cannot be null or empty.", nameof(relativePath));
     }
 
-    const string basePath = "Params.Params.TemplateFieldData.";
+    const string BASEPATH = "Params.Params.TemplateFieldData.";
 
     try
     {
-        return GetVariableValue(basePath + relativePath);
+        return GetVariableValue(BASEPATH + relativePath);
     }
     catch (Exception ex)
     {
         throw new ApplicationException(
-            $"Error retrieving value for path: {basePath + relativePath}", ex
+            $"Error retrieving value for path: {BASEPATH + relativePath}", ex
         );
     }
 }
@@ -23,7 +23,8 @@ string getTemplateFieldValue(string relativePath)
 
 string getExtendedPaymentTermsText()
 {
-    var value = getTemplateFieldValue("EXTENDED_PAYMENT_TERMS.Please_enter_any_special_terms_extended");
+    const string EXTENDED_PAYMENT_TERMS_PATH = "EXTENDED_PAYMENT_TERMS.Please_enter_any_special_terms_extended";
+    var value = getTemplateFieldValue(EXTENDED_PAYMENT_TERMS_PATH);
 
     if (string.IsNullOrWhiteSpace(value))
     {
